@@ -1,9 +1,9 @@
 /*! 
-    MagnifyImageZoom    Copyright (C) 2020 AonaSuzutsuki.
+    MagnifyImageJS    Copyright (C) 2020 AonaSuzutsuki.
     MIT License
 */
 
-function MagnifyImageZoom(imgId, resultId, hoverId) {
+function MagnifyImageJS(imgId, resultId, hoverId) {
     const _imgId = imgId;
     const _resultId = resultId;
     const _hoverId = hoverId;
