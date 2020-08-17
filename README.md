@@ -1,4 +1,4 @@
-# MagnifyImageZoom
+# MagnifyImageJS
 When an image with a large resolution is reduced to fit the screen size using CSS, the pixels may be collapsed and not visible.  
 This library displays the original image in a separate display area without scaling, and changes the display area according to the location of the mouse.  
 If the image is not scaled, the expansion process is skipped.  
@@ -6,8 +6,8 @@ If the image is not scaled, the expansion process is skipped.
 \* Except for the sample, there are no dependent libraries.
 
 # Sample
-[Multiple Images](https://aonsztk.xyz/sample/MagnifyImageZoom/)  
-[Single Image](https://aonsztk.xyz/sample/MagnifyImageZoom/simple.html)  
+[Multiple Images](https://aonsztk.xyz/sample/MagnifyImageJS/)  
+[Single Image](https://aonsztk.xyz/sample/MagnifyImageJS/simple.html)  
 
 # How to use (used Vue.js)
 1. Define the HTML.
@@ -60,12 +60,12 @@ If the image is not scaled, the expansion process is skipped.
 }
 ```
 
-3. Create MagnifyImageZoom instance and init.  
+3. Create MagnifyImageJS instance and init.  
 1st arg: ID of the thumbnail image (need the original source in img.src.).  
 2nd arg: ID of the area that displays the original image.  
 3rd arg: ID of the element that displays the area on mouseover.  
 ```javascript
-let imageZoom = new MagnifyImageZoom("current-src", "current-src-hover", "img-zoom-lens");
+let imageZoom = new MagnifyImageJS("current-src", "current-src-hover", "img-zoom-lens");
 ```
 
 4. Create Vue instance and define methods, data.
