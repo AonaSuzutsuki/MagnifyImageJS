@@ -89,4 +89,8 @@ new Vue({
 
 # Dependency library
 Vue.js: Copyright (c) 2013-present, Yuxi (Evan) You  
-\* used sample.
+\* used in samples.
+
+# Special Thanks
+
+[How To Create an Image Zoom w3schools](https://www.w3schools.com/howto/howto_js_image_zoom.asp)  
