@@ -1,5 +1,5 @@
 /*! 
-    AutoMenu    Copyright (C) 2020 AonaSuzutsuki.
+    MagnifyImageZoom    Copyright (C) 2020 AonaSuzutsuki.
     MIT License
 */
 
