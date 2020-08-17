@@ -6,8 +6,8 @@ If the image is not scaled, the expansion process is skipped.
 \* Except for the sample, there are no dependent libraries.
 
 # Sample
-[Multiple Images](https://aonsztk.xyz/sample/MagnifyImageZoom/)  
-[Single Image](https://aonsztk.xyz/sample/MagnifyImageZoom/simple.html)  
+[Multiple Images](https://aonsztk.xyz/sample/MagnifyImageJS/)  
+[Single Image](https://aonsztk.xyz/sample/MagnifyImageJS/simple.html)  
 
 # How to use (used Vue.js)
 1. Define the HTML.
