@@ -76,7 +76,7 @@ function MagnifyImageJS(imgId, resultId, hoverId) {
         return { x: calcX, y: calcY, lensX: lensX, lensY: lensY };
     }
 
-    const refreshHoverImage = (event, _toRatio, _fromRatio) => {
+    const refreshHoverImage = (event, toRatio, fromRatio) => {
         let img = document.getElementById(_imgId);
         let result = document.getElementById(_resultId);
         let lens = document.getElementById(_hoverId);
@@ -85,7 +85,7 @@ function MagnifyImageJS(imgId, resultId, hoverId) {
             return;
 
         let pos = getCursorPos(event);
-        let calcPos = calculatePotisions(pos, _toRatio, _fromRatio, result, img);
+        let calcPos = calculatePotisions(pos, toRatio, fromRatio, result, img);
         refreshPositions(calcPos, result, lens);
     }
 
