@@ -144,7 +144,7 @@ function MagnifyImageJS(imgId, resultId, hoverId) {
         result.style.backgroundImage = "url('" + src + "')";
         result.style.backgroundSize = `${newImg.width}px ${newImg.height}px`;
 
-        let lens = document.getElementById(hoverId);
+        let lens = document.getElementById(_hoverId);
         lens.style.width = `${result.clientWidth * _fromRatio.widthRatio}px`;
         lens.style.height = `${result.clientHeight * _fromRatio.heightRatio}px`;
     }
