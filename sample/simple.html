@@ -43,7 +43,7 @@
         <div id="display-image-container">
             <div id="img-zoom-lens" v-bind:class="{
                 visible: visibility }"></div>
-            <img id="current-src" :src="displaySrc" v-on:mouseover="currentImageMouseOver"
+            <img id="current-src" :src="displaySrc" :data-orig="originalSrc" v-on:mouseover="currentImageMouseOver"
                 v-on:mouseleave="currentImageMouseLeave" v-on:mousemove="currentImageMouseMove" />
         </div>
 
@@ -72,7 +72,8 @@
             },
             data: {
                 visibility: false,
-                displaySrc: "1.png"
+                displaySrc: "thumbnails/1.jpg",
+                originalSrc: "images/1.png"
             }
         });
     </script>
