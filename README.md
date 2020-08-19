@@ -10,13 +10,16 @@ If the image is not scaled, the expansion process is skipped.
 [Single Image](https://aonsztk.xyz/sample/MagnifyImageJS/simple.html)  
 
 # How to use (used Vue.js)
-1. Define the HTML.
+1. Define the HTML.  
+Specify a thumbnail image in "img.src" and the original image for "img.data-orig".  
+Don't have to add the "img.data-orig" option. If you do not specify it, "img.src" is used to zoom in.  
+
 ```html
 <div id="container">
     <div id="display-image-container">
         <div id="img-zoom-lens" v-bind:class="{
             visible: visibility }"></div>
-        <img id="current-src" :src="displaySrc" v-on:mouseover="currentImageMouseOver"
+        <img id="current-src" :src="displaySrc" :data-orig="originalSrc" v-on:mouseover="currentImageMouseOver"
             v-on:mouseleave="currentImageMouseLeave" v-on:mousemove="currentImageMouseMove" />
     </div>
 
@@ -26,7 +29,8 @@ If the image is not scaled, the expansion process is skipped.
 </div>
 ```
 
-2. Define the CSS.
+2. Define the CSS.  
+Can't use "display: none". Use "visibility: hidden".
 ```css
 .visible {
     visibility: visible !important;
@@ -61,14 +65,15 @@ If the image is not scaled, the expansion process is skipped.
 ```
 
 3. Create MagnifyImageJS instance and init.  
-1st arg: ID of the thumbnail image (need the original source in img.src.).  
+1st arg: ID of the img element.  
 2nd arg: ID of the area that displays the original image.  
 3rd arg: ID of the element that displays the area on mouseover.  
 ```javascript
 let imageZoom = new MagnifyImageJS("current-src", "current-src-hover", "img-zoom-lens");
 ```
 
-4. Create Vue instance and define methods, data.
+4. Create Vue instance and define methods, data.  
+Call the "MagnifyImageJS#calculateRatios" method If the image size changes during mouseover.
 ```javascript
 new Vue({
     el: "#container",
@@ -86,7 +91,8 @@ new Vue({
     },
     data: {
         visibility: false,
-        displaySrc: "1.png"
+        displaySrc: "thumbnails/1.jpg",
+        originalSrc: "images/1.png"
     }
 });
 ```
@@ -96,5 +102,4 @@ Vue.js: Copyright (c) 2013-present, Yuxi (Evan) You
 \* used in samples.
 
 # Special Thanks
-
 [How To Create an Image Zoom w3schools](https://www.w3schools.com/howto/howto_js_image_zoom.asp)  

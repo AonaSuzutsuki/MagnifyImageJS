@@ -66,7 +66,7 @@
             <div id="display-image-container">
                 <div id="img-zoom-lens" v-bind:class="{
                     visible: visibility }"></div>
-                <img id="current-src" :src="displaySrc" v-on:mouseover="currentImageMouseOver"
+                <img id="current-src" :src="displaySrc" :data-orig="originalSrc" v-on:mouseover="currentImageMouseOver"
                     v-on:mouseleave="currentImageMouseLeave" v-on:mousemove="currentImageMouseMove" />
             </div>
 
@@ -86,6 +86,7 @@
                 change: function (thumbnail, thumbnails) {
                     thumbnails.find(item => item.isSelected).isSelected = false;
                     this.displaySrc = thumbnail.src;
+                    this.originalSrc = thumbnail.original;
                     thumbnail.isSelected = true;
                 },
                 currentImageMouseOver: async function () {
@@ -101,26 +102,32 @@
             },
             data: {
                 visibility: false,
-                displaySrc: "1.png",
+                displaySrc: "thumbnails/1.jpg",
+                originalSrc: "images/1.png",
                 thumbnails: [
                     {
-                        src: "1.png",
+                        src: "thumbnails/1.jpg",
+                        original: "images/1.png",
                         isSelected: true
                     },
                     {
-                        src: "2.png",
+                        src: "thumbnails/2.jpg",
+                        original: "images/2.png",
                         isSelected: false
                     },
                     {
-                        src: "3.png",
+                        src: "thumbnails/3.jpg",
+                        original: "images/3.png",
                         isSelected: false
                     },
                     {
-                        src: "4.png",
+                        src: "images/4.png",
+                        original: "images/4.png",
                         isSelected: false
                     },
                     {
-                        src: "5.png",
+                        src: "images/5.png",
+                        original: "images/5.png",
                         isSelected: false
                     }
                 ]
