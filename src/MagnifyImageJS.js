@@ -1,5 +1,7 @@
-/*! 
+/*@license 
     MagnifyImageJS    Copyright (C) 2020 AonaSuzutsuki.
+    v1.0
+
     MIT License
 */
 
