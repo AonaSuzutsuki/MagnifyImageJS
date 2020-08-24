@@ -1,0 +1,30 @@
+{
+  "name": "magnifyimagejs",
+  "version": "1.0.0",
+  "description": "When an image with a large resolution is reduced to fit the screen size using CSS, the pixels may be collapsed and not visible.  \r This library displays the original image in a separate display area without scaling, and changes the display area according to the location of the mouse.  \r If the image is not scaled, the expansion process is skipped.",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-filerev": "^2.3.1"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "grunt build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AonaSuzutsuki/MagnifyImageJS.git"
+  },
+  "author": "AonaSuzutsuki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AonaSuzutsuki/MagnifyImageJS/issues"
+  },
+  "homepage": "https://github.com/AonaSuzutsuki/MagnifyImageJS#readme"
+}

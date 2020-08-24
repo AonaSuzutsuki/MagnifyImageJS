@@ -1,0 +1,32 @@
+
+.visible {
+    visibility: visible !important;
+}
+
+#container {
+    display: flex;
+}
+
+#current-src {
+    width: 400px;
+}
+
+#display-image-container {
+    position: relative;
+    /* left: 500px; */
+}
+
+#img-zoom-lens {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    border: 2px solid #e45b9f;
+    box-sizing: border-box;
+}
+
+#current-src-hover {
+    visibility: hidden;
+    width: 400px;
+    height: 400px;
+    border: 1px solid;
+}

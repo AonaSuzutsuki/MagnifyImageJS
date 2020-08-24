@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="stylesheets/multiple.min.css" />
+</head>
+
+<body>
+    <div id="container">
+        <div id="thumbnail-container">
+            <ul>
+                <li v-for="thumbnail in thumbnails"><a href="javascript:void(0)"
+                        v-on:click="change(thumbnail, thumbnails)"><img :src="thumbnail.src"
+                            v-bind:class="{ imageborder: thumbnail.isSelected }" /></a></li>
+            </ul>
+        </div>
+        <div id="image-container">
+            <div id="display-image-container">
+                <div id="img-zoom-lens" v-bind:class="{
+                    visible: visibility }"></div>
+                <img id="current-src" :src="displaySrc" :data-orig="originalSrc" v-on:mouseover="currentImageMouseOver"
+                    v-on:mouseleave="currentImageMouseLeave" v-on:mousemove="currentImageMouseMove" />
+            </div>
+
+            <div id="current-src-hover" v-bind:class="{
+                visible: visibility }">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/vue.min.js"></script>
+    <script type="text/javascript" src="scripts/MagnifyImageJS.min.js"></script>
+    <script type="text/javascript">
+        let imageZoom = new MagnifyImageJS("current-src", "current-src-hover", "img-zoom-lens");
+        new Vue({
+            el: "#container",
+            methods: {
+                change: function (thumbnail, thumbnails) {
+                    thumbnails.find(item => item.isSelected).isSelected = false;
+                    this.displaySrc = thumbnail.src;
+                    this.originalSrc = thumbnail.original;
+                    thumbnail.isSelected = true;
+                },
+                currentImageMouseOver: async function () {
+                    await imageZoom.setHoverImage();
+                    this.visibility = imageZoom.canZoom();
+                },
+                currentImageMouseLeave: function () {
+                    this.visibility = false;
+                },
+                currentImageMouseMove: function (e) {
+                    imageZoom.refreshHoverImage(e);
+                }
+            },
+            data: {
+                visibility: false,
+                displaySrc: "thumbnails/1.jpg",
+                originalSrc: "images/1.png",
+                thumbnails: [
+                    {
+                        src: "thumbnails/1.jpg",
+                        original: "images/1.png",
+                        isSelected: true
+                    },
+                    {
+                        src: "thumbnails/2.jpg",
+                        original: "images/2.png",
+                        isSelected: false
+                    },
+                    {
+                        src: "thumbnails/3.jpg",
+                        original: "images/3.png",
+                        isSelected: false
+                    },
+                    {
+                        src: "images/4.png",
+                        original: "images/4.png",
+                        isSelected: false
+                    },
+                    {
+                        src: "images/5.png",
+                        original: "images/5.png",
+                        isSelected: false
+                    }
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>

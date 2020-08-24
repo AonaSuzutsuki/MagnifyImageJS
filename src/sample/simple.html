@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="stylesheets/simple.min.css" />
+</head>
+
+<body>
+    <div id="container">
+        <div id="display-image-container">
+            <div id="img-zoom-lens" v-bind:class="{
+                visible: visibility }"></div>
+            <img id="current-src" :src="displaySrc" :data-orig="originalSrc" v-on:mouseover="currentImageMouseOver"
+                v-on:mouseleave="currentImageMouseLeave" v-on:mousemove="currentImageMouseMove" />
+        </div>
+
+        <div id="current-src-hover" v-bind:class="{
+            visible: visibility }">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/vue.min.js"></script>
+    <script type="text/javascript" src="scripts/MagnifyImageJS.min.js"></script>
+    <script type="text/javascript">
+        let imageZoom = new MagnifyImageJS("current-src", "current-src-hover", "img-zoom-lens");
+        new Vue({
+            el: "#container",
+            methods: {
+                currentImageMouseOver: async function () {
+                    await imageZoom.setHoverImage();
+                    this.visibility = imageZoom.canZoom();
+                },
+                currentImageMouseLeave: function () {
+                    this.visibility = false;
+                },
+                currentImageMouseMove: function (e) {
+                    imageZoom.refreshHoverImage(e);
+                }
+            },
+            data: {
+                visibility: false,
+                displaySrc: "thumbnails/1.jpg",
+                originalSrc: "images/1.png"
+            }
+        });
+    </script>
+</body>
+
+</html>
