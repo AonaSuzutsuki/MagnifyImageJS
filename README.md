@@ -97,6 +97,23 @@ new Vue({
 });
 ```
 
+# How to Build
+## Requirements
+Node Package Manager (6.14.8 when it was developed.)
+
+## Build
+### Install packages
+```bash
+$ npm install
+```
+
+### Build JavaScript codes and samples
+The result is output to "dist" and "min" in repository directory.
+```bash
+$ npm run build
+# or grunt build
+```
+
 # Dependency library
 Vue.js: Copyright (c) 2013-present, Yuxi (Evan) You  
 \* used in samples.
